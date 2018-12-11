@@ -1,0 +1,12 @@
+version: "3.5"
+services:
+  web:
+    image: sentry
+    command: sh -c "sentry start http"
+    ports:
+      - 9000:9000
+    volumes:
+      - ./:
+    environment:
+      - NEW_RELIC_APP_NAME=Sentry
+      - NEW_RELIC_LICENSE_KEY=
